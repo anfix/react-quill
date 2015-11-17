@@ -20,36 +20,36 @@ var defaultColors = [
 
 var defaultItems = [
 
-	{ label:'Formats', type:'group', items: [
-		{ label:'Font', type:'font', items: [
+	{ label:'Formatos', type:'group', items: [
+		{ label:'Fuente', type:'font', items: [
 			{ label:'Sans Serif',  value:'sans-serif' },
 			{ label:'Serif',       value:'serif' },
 			{ label:'Monospace',   value:'monospace' }
 		]},
 		{ type:'separator' },
-		{ label:'Size', type:'size', items: [
+		{ label:'Tamaño', type:'size', items: [
 			{ label:'Normal',  value:'10px' },
-			{ label:'Smaller', value:'13px' },
-			{ label:'Larger',  value:'18px' },
-			{ label:'Huge',    value:'32px' }
+			{ label:'Pequeña', value:'13px' },
+			{ label:'Grande',  value:'18px' },
+			{ label:'Gigante',    value:'32px' }
 		]},
 		{ type:'separator' },
-		{ label:'Alignment', type:'align', items: [
-			{ label:'', value:'center' },
-			{ label:'', value:'left' },
-			{ label:'', value:'right' },
-			{ label:'', value:'justify' }
+		{ label:'Justificación', type:'align', items: [
+			{ label:'Centrado', value:'center' },
+			{ label:'Izquierda', value:'left' },
+			{ label:'Derecha', value:'right' },
+			{ label:'Justificado', value:'justify' }
 		]}
 	]},
 
-	{ label:'Text', type:'group', items: [
+	{ label:'Texto', type:'group', items: [
 		{ type:'bold', label:'Bold' },
 		{ type:'italic', label:'Italic' },
 		{ type:'strike', label:'Strike' },
 		{ type:'underline', label:'Underline' },
 		{ type:'separator' },
 		{ type:'color', label:'Color', items:defaultColors },
-		{ type:'background', label:'Background color', items:defaultColors },
+		{ type:'background', label:'Color de fondo', items:defaultColors },
 		{ type:'separator' },
 		{ type:'link', label:'Link' }
 	]},
