@@ -226,7 +226,12 @@ var QuillComponent = React.createClass({
 			return [
 				// Quill modifies these elements in-place,
 				// so we need to re-render them every time.
-
+        React.DOM.div({
+					key: 'editor-' + Math.random(),
+					ref: 'editor',
+					className: 'quill-contents',
+					dangerouslySetInnerHTML: { __html:this.getEditorContents() }
+				})
 				// Render the toolbar unless explicitly disabled.
 				this.props.toolbar !== false? QuillToolbar({
 					key: 'toolbar-' + Math.random(),
@@ -234,26 +239,20 @@ var QuillComponent = React.createClass({
 					items: this.props.toolbar
 				}) : false,
 
-				React.DOM.div({
-					key: 'editor-' + Math.random(),
-					ref: 'editor',
-					className: 'quill-contents',
-					dangerouslySetInnerHTML: { __html:this.getEditorContents() }
-				})
 			];
 		}
 	},
 
 	render: function() {
-		return this.renderContents()
-      React.DOM.div({
-  			id: this.props.id,
-  			style: this.props.style,
-  			className: 'quill ' + this.props.className,
-  			onKeyPress: this.props.onKeyPress,
-  			onKeyDown: this.props.onKeyDown,
-  			onKeyUp: this.props.onKeyUp,
-  			onChange: this.preventDefault },
+		return React.DOM.div({
+			id: this.props.id,
+			style: this.props.style,
+			className: 'quill ' + this.props.className,
+			onKeyPress: this.props.onKeyPress,
+			onKeyDown: this.props.onKeyDown,
+			onKeyUp: this.props.onKeyUp,
+			onChange: this.preventDefault },
+			this.renderContents()
 		);
 	},
 
