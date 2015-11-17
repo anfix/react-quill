@@ -227,19 +227,18 @@ var QuillComponent = React.createClass({
 				// Quill modifies these elements in-place,
 				// so we need to re-render them every time.
 
-				// Render the toolbar unless explicitly disabled.
-				this.props.toolbar !== false? QuillToolbar({
-					key: 'toolbar-' + Math.random(),
-					ref: 'toolbar',
-					items: this.props.toolbar
-				}) : false,
-
+				// Render the toolbar unless explicitly disabled
 				React.DOM.div({
 					key: 'editor-' + Math.random(),
 					ref: 'editor',
 					className: 'quill-contents',
 					dangerouslySetInnerHTML: { __html:this.getEditorContents() }
-				})
+				}),
+        this.props.toolbar !== false ? QuillToolbar({
+					key: 'toolbar-' + Math.random(),
+					ref: 'toolbar',
+					items: this.props.toolbar
+				}) : false
 			];
 		}
 	},
