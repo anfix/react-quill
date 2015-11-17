@@ -34,7 +34,7 @@ var defaultItems = [
 			{ label:'Gigante',    value:'32px' }
 		]},
 		{ type:'separator' },
-		{ label:'Justificación', type:'align', items: [
+		{ label:'', type:'align', items: [
 			{ label:'Centrado', value:'center' },
 			{ label:'Izquierda', value:'left' },
 			{ label:'Derecha', value:'right' },
