@@ -138,7 +138,7 @@ var QuillComponent = React.createClass({
 
 	shouldComponentUpdate: function(nextProps, nextState) {
 		// Check if one of the changes should trigger a re-render.
-		for (var i=0; i<this.dirtyProps.length; i++) {
+		for (var i=0; i< this.dirtyProps.length; i++) {
 			var prop = this.dirtyProps[i];
 			if (nextProps[prop] !== this.props[prop]) {
 				return true;
@@ -245,15 +245,15 @@ var QuillComponent = React.createClass({
 	},
 
 	render: function() {
-		return React.DOM.div({
-			id: this.props.id,
-			style: this.props.style,
-			className: 'quill ' + this.props.className,
-			onKeyPress: this.props.onKeyPress,
-			onKeyDown: this.props.onKeyDown,
-			onKeyUp: this.props.onKeyUp,
-			onChange: this.preventDefault },
-			this.renderContents()
+		return this.renderContents()
+      React.DOM.div({
+  			id: this.props.id,
+  			style: this.props.style,
+  			className: 'quill ' + this.props.className,
+  			onKeyPress: this.props.onKeyPress,
+  			onKeyDown: this.props.onKeyDown,
+  			onKeyUp: this.props.onKeyUp,
+  			onChange: this.preventDefault },
 		);
 	},
 
