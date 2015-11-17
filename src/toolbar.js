@@ -35,10 +35,10 @@ var defaultItems = [
 		]},
 		{ type:'separator' },
 		{ label:'', type:'align', items: [
-			{ label:'Centrado', value:'center' },
-			{ label:'Izquierda', value:'left' },
-			{ label:'Derecha', value:'right' },
-			{ label:'Justificado', value:'justify' }
+			{ label:'', value:'center' },
+			{ label:'', value:'left' },
+			{ label:'', value:'right' },
+			{ label:'', value:'justify' }
 		]}
 	]},
 
