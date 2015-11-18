@@ -214,14 +214,14 @@ var QuillComponent = React.createClass({
 
   onDraggginStart: function(){
     var link = React.findDOMNode(this.refs.textLink);
-    if (link) draggingLink.style.opacity = '0.4';
+    if (link) draggingLink.style.backgroundColor = '#E4F2F7';
   },
 
   _onDrop: function(){
     var link = React.findDOMNode(this.refs.textLink);
     var container = React.findDOMNode(this.refs.textLink);
     if (link && container) {
-      container.innerHTML += link.value;
+      container.innerHTML = container.innerHTML + link.value;
     }
   },
 
@@ -261,14 +261,15 @@ var QuillComponent = React.createClass({
             })
           ),
           React.DOM.div({
-					    className: 'aui-core-form-editor-link-draggrable',
-          }, React.DOM.span({
               key: 'text-link ' + Math.random(),
               ref: 'textLink',
-					    className: 'aui-core-form-editor-link-text-draggrable',
-              children: this.props.link,
+					    className: 'aui-core-form-editor-link-draggrable',
               draggable: true,
               onDragStart: this.onDraggginStart(),
+          }, React.DOM.span({
+					    className: 'aui-core-form-editor-link-text-draggrable',
+              children: 'http://www.facturaplus.com',
+
             })
           )
         ),
