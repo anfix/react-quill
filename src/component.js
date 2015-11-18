@@ -254,7 +254,7 @@ var QuillComponent = React.createClass({
                children: this.props.link,
                draggable: true,
                onDragStart: this._onDragStar(),
-               ref: 'dragginLink'
+               ref: 'dragginLink',
           })
         ),
         this.props.toolbar !== false ? QuillToolbar({
