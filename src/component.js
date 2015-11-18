@@ -220,24 +220,24 @@ var QuillComponent = React.createClass({
 			// Clone children to own their refs.
 			return React.Children.map(
 				this.props.children,
-				function(c) { return cloneElement(c, { ref: c.ref }) }
+				function(c) { return cloneElement(c, { ref: c.ref }); }
 			);
 		} else {
+      React.DOM.div({className: 'aui-core-editor-container-link'}, 'link');
 			return [
 				// Quill modifies these elements in-place,
 				// so we need to re-render them every time.
 
 				// Render the toolbar unless explicitly disabled
-				React.DOM.div({
+				React.DOM.div(
+          {
 					key: 'editor-' + Math.random(),
 					ref: 'editor',
 					className: 'quill-contents',
 					dangerouslySetInnerHTML: { __html:this.getEditorContents() }
-				},
-        React.DOM.div({
-          className: 'aui-core-editor-link-container',
-        })
-      ),
+        },
+        'link'
+        ),
         this.props.toolbar !== false ? QuillToolbar({
 					key: 'toolbar-' + Math.random(),
 					ref: 'toolbar',
