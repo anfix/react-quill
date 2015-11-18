@@ -28,8 +28,8 @@ var defaultItems = [
 		]},
 		{ type:'separator' },
 		{ label:'Tamaño', type:'size', items: [
-			{ label:'Normal',  value:'10px' },
-			{ label:'Pequeña', value:'13px' },
+			{ label:'Pequeña',  value:'10px' },
+			{ label:'Normal', value:'13px' },
 			{ label:'Grande',  value:'18px' },
 			{ label:'Gigante',    value:'32px' }
 		]},
