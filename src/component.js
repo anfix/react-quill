@@ -235,8 +235,11 @@ var QuillComponent = React.createClass({
 					dangerouslySetInnerHTML: { __html:this.getEditorContents() }
 				}),
         React.DOM.div({
-					className: 'dtyjdtyjdtyjdtyjs',
-				}),
+					className: 'aui-core-form-editor-link-container',
+				}, React.DOM.div({
+					     className: 'aui-core-form-editor-link-text',
+          })
+        ),
         this.props.toolbar !== false ? QuillToolbar({
 					key: 'toolbar-' + Math.random(),
 					ref: 'toolbar',
