@@ -233,7 +233,11 @@ var QuillComponent = React.createClass({
 					ref: 'editor',
 					className: 'quill-contents',
 					dangerouslySetInnerHTML: { __html:this.getEditorContents() }
-				}),
+				},
+        React.DOM.div({
+          className: 'aui-core-editor-link-container',
+        })
+      ),
         this.props.toolbar !== false ? QuillToolbar({
 					key: 'toolbar-' + Math.random(),
 					ref: 'toolbar',
