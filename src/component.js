@@ -273,7 +273,7 @@ var QuillComponent = React.createClass({
               key: 'text-link ' + Math.random(),
               ref: 'textLink',
 					    className: 'aui-core-form-editor-link-draggrable',
-              draggable: true,
+              draggable: false,
               ondragstart: function() { console.log('2ljhqdweoj')},
               onDragEnd: this.onDraggginEnd(),
           }, React.DOM.span({
