@@ -213,8 +213,16 @@ var QuillComponent = React.createClass({
 	},
 
   onDraggginStart: function(){
-    var draggingLink = React.findDOMNode(this.refs.textLink);
-    if (draggingLink) draggingLink.style.opacity = '0.4';
+    var link = React.findDOMNode(this.refs.textLink);
+    if (link) draggingLink.style.opacity = '0.4';
+  },
+
+  _onDrop: function(){
+    var link = React.findDOMNode(this.refs.textLink);
+    var container = React.findDOMNode(this.refs.textLink);
+    if (link && container) {
+      container.innerHTML += link.value;
+    }
   },
 
 	/*
@@ -238,9 +246,12 @@ var QuillComponent = React.createClass({
 					key: 'editor-' + Math.random(),
 					ref: 'editor',
 					className: 'quill-contents',
-					dangerouslySetInnerHTML: { __html:this.getEditorContents() }
+					dangerouslySetInnerHTML: { __html:this.getEditorContents() },
+          onDrop: this._onDrop()
 				}),
         React.DOM.div({
+          key: 'link-container ' + Math.random(),
+					ref: 'linkContainer',
 					className: 'aui-core-form-editor-link-container',
 				}, React.DOM.div({
 					     className: 'aui-core-form-editor-link-text-wrapper',
