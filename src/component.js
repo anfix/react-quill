@@ -212,6 +212,11 @@ var QuillComponent = React.createClass({
 		return this.state.selection;
 	},
 
+  onDraggginStart: function(){
+    var draggingLink = React.findDOMNode(this.refs.textLink);
+    draggingLink.style.opacity = '0.4';
+  },
+
 	/*
 	Renders either the specified contents, or a default
 	configuration of toolbar and contents area.
@@ -252,6 +257,7 @@ var QuillComponent = React.createClass({
 					    className: 'aui-core-form-editor-link-text-draggrable',
               children: this.props.link,
               draggable: true,
+              onDragStart: this.onDraggginStart(),
             })
           )
         ),
