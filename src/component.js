@@ -240,15 +240,18 @@ var QuillComponent = React.createClass({
 				}, React.DOM.div({
 					     className: 'aui-core-form-editor-link-text-wrapper',
           }, React.DOM.span({
-  					     className: 'aui-core-form-editor-link-text',
-                 children: 'Enlace permanente del mensaje',
+  					    className: 'aui-core-form-editor-link-text',
+                children: 'Enlace permanente del mensaje',
             })
           ),
           React.DOM.div({
-					     className: 'aui-core-form-editor-link-draggrable',
-               children: this.props.link,
-               draggable: true,
-          })
+					    className: 'aui-core-form-editor-link-draggrable',
+          }, React.DOM.span({
+					    className: 'aui-core-form-editor-link-text-draggrable',
+              children: this.props.link,
+              draggable: true,
+            })
+          )
         ),
         this.props.toolbar !== false ? QuillToolbar({
 					key: 'toolbar-' + Math.random(),
