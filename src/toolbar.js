@@ -34,7 +34,7 @@ var defaultItems = [
 			{ label:'Gigante',    value:'32px' }
 		]},
 		{ type:'separator' },
-		{ label:'', type:'align', items: [
+		{ label:'Justificación', type:'align', items: [
 			{ label:'', value:'center' },
 			{ label:'', value:'left' },
 			{ label:'', value:'right' },
@@ -48,16 +48,16 @@ var defaultItems = [
 		{ type:'strike', label:'Strike' },
 		{ type:'underline', label:'Underline' },
 		{ type:'separator' },
-		{ type:'color', label:'Color', items:defaultColors },
+		{ type:'color', label:'Color de texto', items:defaultColors },
 		{ type:'background', label:'Color de fondo', items:defaultColors },
 		{ type:'separator' },
 		{ type:'link', label:'Link' }
 	]},
 
 	{ label:'Blocks', type:'group', items: [
-		{ type:'bullet', label:'Bullet' },
+		{ type:'bullet', label:'Viñeta' },
 		{ type:'separator' },
-		{ type:'list', label:'List' }
+		{ type:'list', label:'Numeración' }
 	]}
 
 ];
