@@ -212,7 +212,7 @@ var QuillComponent = React.createClass({
 		return this.state.selection;
 	},
 
-  _onDragStar: function() {
+  onDragStar: function() {
     var draggingElement = React.findDOMNode(this.refs.dragginLink);
     draggingElement.style.opacity = '0.4';
   }
@@ -252,7 +252,6 @@ var QuillComponent = React.createClass({
           React.DOM.div({
 					     className: 'aui-core-form-editor-link-draggrable',
                children: this.props.link,
-               draggable: true,
                ref: 'dragginLink',
           })
         ),
