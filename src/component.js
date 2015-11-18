@@ -253,7 +253,6 @@ var QuillComponent = React.createClass({
 					     className: 'aui-core-form-editor-link-draggrable',
                children: this.props.link,
                draggable: true,
-               onDragStart: this._onDragStar(),
                ref: 'dragginLink',
           })
         ),
