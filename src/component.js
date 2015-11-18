@@ -212,12 +212,12 @@ var QuillComponent = React.createClass({
 		return this.state.selection;
 	},
 
-  onDraggginStart: function(){
-    var link = React.findDOMNode(this.refs.textLink);
+  onDraggginStart: function(e){
+    var link = e.currentTarget;
     if (link) draggingLink.style.backgroundColor = '#E4F2F7';
   },
 
-  _onDrop: function(){
+  _onDrop: function(e){
     var link = React.findDOMNode(this.refs.textLink);
     var container = React.findDOMNode(this.refs.textLink);
     if (link && container) {
@@ -269,7 +269,6 @@ var QuillComponent = React.createClass({
           }, React.DOM.span({
 					    className: 'aui-core-form-editor-link-text-draggrable',
               children: 'http://www.facturaplus.com',
-
             })
           )
         ),
