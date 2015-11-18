@@ -214,7 +214,7 @@ var QuillComponent = React.createClass({
 
   onDraggginStart: function(){
     var draggingLink = React.findDOMNode(this.refs.textLink);
-    draggingLink.style.opacity = '0.4';
+    if (draggingLink) draggingLink.style.opacity = '0.4';
   },
 
 	/*
