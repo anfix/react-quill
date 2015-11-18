@@ -238,7 +238,7 @@ var QuillComponent = React.createClass({
 					className: 'aui-core-form-editor-link-container',
 				}, React.DOM.div({
 					     className: 'aui-core-form-editor-link-text',
-          })
+          }, 'Enlace permanente del mensaje')
         ),
         this.props.toolbar !== false ? QuillToolbar({
 					key: 'toolbar-' + Math.random(),
