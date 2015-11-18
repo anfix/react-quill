@@ -214,14 +214,16 @@ var QuillComponent = React.createClass({
 
   onDraggginStart: function(e){
     var link = React.findDOMNode(this.refs.textLink);
-    if (link) link.style.backgroundColor = '#E4F2F7';
+    if (link) {
+      link.style.backgroundColor = "#E4F2F7";
+    }
   },
 
   _onDrop: function(e){
     var link = React.findDOMNode(this.refs.textLink);
     var container = React.findDOMNode(this.refs.textLink);
     if (link && container) {
-      container.innerHTML = container.innerHTML + link.value;
+      container.innerHTML = container.innerHTML + link.innerHTML;
     }
   },
 
