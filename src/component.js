@@ -44,7 +44,8 @@ var QuillComponent = React.createClass({
 		onKeyDown: T.func,
 		onKeyUp: T.func,
 		onChange: T.func,
-		onChangeSelection: T.func
+		onChangeSelection: T.func,
+    children: T.string
 	},
 
 	/*
@@ -237,8 +238,16 @@ var QuillComponent = React.createClass({
         React.DOM.div({
 					className: 'aui-core-form-editor-link-container',
 				}, React.DOM.div({
-					     className: 'aui-core-form-editor-link-text',
-          }, 'Enlace permanente del mensaje')
+					     className: 'aui-core-form-editor-link-text-wrapper',
+          }, React.DOM.span({
+  					     className: 'aui-core-form-editor-link-text',
+                 children: 'Enlace permanente del mensaje',
+            })
+          ),
+          React.DOM.div({
+					     className: 'aui-core-form-editor-link-draggrable',
+               children: this.props.link
+          })
         ),
         this.props.toolbar !== false ? QuillToolbar({
 					key: 'toolbar-' + Math.random(),
