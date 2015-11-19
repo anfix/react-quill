@@ -51,7 +51,6 @@ var defaultItems = [
 		{ type:'color', label:'Color de texto', items:defaultColors },
 		{ type:'background', label:'Color de fondo', items:defaultColors },
 		{ type:'separator' },
-		{ type:'link', label:'Link' }
 	]},
 
 	{ label:'Blocks', type:'group', items: [

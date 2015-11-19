@@ -45,7 +45,12 @@ var QuillComponent = React.createClass({
 		onKeyUp: T.func,
 		onChange: T.func,
 		onChangeSelection: T.func,
-    children: T.string
+    children: T.string,
+    ondragStar: T.func,
+    ondrag: T.func,
+    ondropas: T.func,
+    ondragOver: T.func,
+    feature: T.string
 	},
 
 	/*
@@ -212,14 +217,15 @@ var QuillComponent = React.createClass({
 		return this.state.selection;
 	},
 
-  onDraggginStart: function(e){
+  onDragginStart: function(e){
     var link = React.findDOMNode(this.refs.textLink);
     if (link) {
       link.style.backgroundColor = "#E4F2F7";
     }
+    console.log("kdjnqwejd")
   },
 
-  onDraggginEnd: function(e){
+  onDragginEnd: function(e){
     var link = React.findDOMNode(this.refs.textLink);
     if (link) {
       link.style.color = "#E4F2F7";
@@ -256,7 +262,8 @@ var QuillComponent = React.createClass({
 					ref: 'editor',
 					className: 'quill-contents',
 					dangerouslySetInnerHTML: { __html:this.getEditorContents() },
-          onDrop: this._onDrop()
+          onDragOver: this.props.ondragOver,
+          onDrop: this.props.ondrop,
 				}),
         React.DOM.div({
           key: 'link-container ' + Math.random(),
@@ -266,16 +273,17 @@ var QuillComponent = React.createClass({
 					     className: 'aui-core-form-editor-link-text-wrapper',
           }, React.DOM.span({
   					    className: 'aui-core-form-editor-link-text',
-                children: 'Enlace permanente del mensaje',
+                children: 'Enlace permanente '+ this.props.feature,
             })
           ),
           React.DOM.div({
               key: 'text-link ' + Math.random(),
               ref: 'textLink',
 					    className: 'aui-core-form-editor-link-draggrable',
-              draggable: false,
-              ondragstart: function() { console.log('2ljhqdweoj')},
-              onDragEnd: this.onDraggginEnd(),
+              draggable: true,
+              onDrag: this.props.ondrag,
+              onDragStart: this.props.ondragStar,
+              onDragEnd: this.props.ondragEnd
           }, React.DOM.span({
 					    className: 'aui-core-form-editor-link-text-draggrable',
               children: 'http://www.facturaplus.com',
