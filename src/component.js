@@ -51,7 +51,8 @@ var QuillComponent = React.createClass({
     ondropas: T.func,
     ondragOver: T.func,
     feature: T.string,
-    ondragEndLink: T.func
+    ondragEndLink: T.func,
+    link: T.string
 	},
 
 	/*
@@ -287,7 +288,7 @@ var QuillComponent = React.createClass({
               onDragEnd: this.props.ondragEndLink,
           }, React.DOM.span({
 					    className: 'aui-core-form-editor-link-text-draggrable',
-              children: 'http://www.facturaplus.com',
+              children: this.props.link,
             })
           )
         ),
