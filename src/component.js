@@ -219,29 +219,6 @@ var QuillComponent = React.createClass({
 		return this.state.selection;
 	},
 
-  onDragginStart: function(e){
-    var link = React.findDOMNode(this.refs.textLink);
-    if (link) {
-      link.style.backgroundColor = "#E4F2F7";
-    }
-    console.log("kdjnqwejd")
-  },
-
-  onDragginEnd: function(e){
-    var link = React.findDOMNode(this.refs.textLink);
-    if (link) {
-      link.style.color = "#E4F2F7";
-    }
-  },
-
-  _onDrop: function(e){
-    var link = React.findDOMNode(this.refs.textLink);
-    var container = React.findDOMNode(this.refs.textLink);
-    if (link && container) {
-      container.innerHTML = container.innerHTML + link.innerHTML;
-    }
-  },
-
 	/*
 	Renders either the specified contents, or a default
 	configuration of toolbar and contents area.
@@ -266,6 +243,7 @@ var QuillComponent = React.createClass({
 					dangerouslySetInnerHTML: { __html:this.getEditorContents() },
           onDragOver: this.props.ondragOver,
           onDrop: this.props.ondrop,
+          children: 'Hola',
 				}),
         React.DOM.div({
           key: 'link-container ' + Math.random(),
