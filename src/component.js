@@ -243,7 +243,6 @@ var QuillComponent = React.createClass({
 					dangerouslySetInnerHTML: { __html:this.getEditorContents() },
           onDragOver: this.props.ondragOver,
           onDrop: this.props.ondrop,
-          children: 'Hola',
 				}),
         React.DOM.div({
           key: 'link-container ' + Math.random(),
