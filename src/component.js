@@ -48,7 +48,7 @@ var QuillComponent = React.createClass({
     children: T.string,
     ondragStar: T.func,
     ondrag: T.func,
-    onClick: T-func,
+    onClick: T.func,
     ondropas: T.func,
     ondragOver: T.func,
     feature: T.string,
