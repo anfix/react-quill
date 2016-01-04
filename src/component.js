@@ -48,6 +48,7 @@ var QuillComponent = React.createClass({
     children: T.string,
     ondragStar: T.func,
     ondrag: T.func,
+    onClick: T-func,
     ondropas: T.func,
     ondragOver: T.func,
     feature: T.string,
@@ -243,6 +244,7 @@ var QuillComponent = React.createClass({
 					dangerouslySetInnerHTML: { __html:this.getEditorContents() },
           onDragOver: this.props.ondragOver,
           onDrop: this.props.ondrop,
+          onClick: this.props.onClick,
 				}),
         React.DOM.div({
           key: 'link-container ' + Math.random(),
