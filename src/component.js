@@ -245,6 +245,7 @@ var QuillComponent = React.createClass({
           onDragOver: this.props.ondragOver,
           onDrop: this.props.ondrop,
           onClick: this.props.onClick,
+          tabIndex: 0,
 				}),
         React.DOM.div({
           key: 'link-container ' + Math.random(),
