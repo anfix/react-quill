@@ -1,9 +1,11 @@
 'use strict';
 
 var React = require('react'),
+  PropTypes = require('prop-types'),
+	createReactClass = require('create-react-class'),
 	QuillToolbar = require('./toolbar'),
 	QuillMixin = require('./mixin'),
-	T = React.PropTypes;
+	T = PropTypes;
 
 // Support React 0.11 and 0.12
 // FIXME: Remove with React 0.13
@@ -21,7 +23,7 @@ if (React.cloneElement) {
 	throw new Error('React addons are required when using React 0.12 or less.');
 }
 
-var QuillComponent = React.createClass({
+var QuillComponent = createReactClass({
 
 	displayName: 'Quill',
 

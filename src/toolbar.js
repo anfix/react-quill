@@ -1,7 +1,9 @@
 'use strict';
 
 var React = require('react'),
-	T = React.PropTypes;
+	createReactClass = require('create-react-class'),
+	PropTypes = require('prop-types'),
+	T = PropTypes;
 
 var defaultColors = [
 	'rgb(  0,   0,   0)', 'rgb(230,   0,   0)', 'rgb(255, 153,   0)',
@@ -61,7 +63,7 @@ var defaultItems = [
 
 ];
 
-var QuillToolbar = React.createClass({
+var QuillToolbar = createReactClass({
 
 	displayName: 'Quill Toolbar',
 
