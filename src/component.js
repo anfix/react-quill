@@ -1,6 +1,7 @@
 'use strict';
 
 var React = require('react'),
+  ReactDOM = require('react-dom'),
   PropTypes = require('prop-types'),
 	createReactClass = require('create-react-class'),
 	QuillToolbar = require('./toolbar'),
@@ -200,7 +201,7 @@ var QuillComponent = createReactClass({
 			// because it's shared between components.
 			config.modules = JSON.parse(JSON.stringify(config.modules));
 			config.modules.toolbar = {
-				container: this.refs.toolbar.getDOMNode()
+				container: this.refs.toolbar
 			};
 		}
 		return config;
@@ -211,7 +212,7 @@ var QuillComponent = createReactClass({
 	},
 
 	getEditorElement: function() {
-		return this.refs.editor.getDOMNode();
+		return this.refs.editor;
 	},
 
 	getEditorContents: function() {
@@ -239,7 +240,7 @@ var QuillComponent = createReactClass({
 				// so we need to re-render them every time.
 
 				// Render the toolbar unless explicitly disabled
-				React.DOM.div({
+				ReactDOM.div({
 					key: 'editor-' + Math.random(),
 					ref: 'editor',
 					className: 'quill-contents',
@@ -248,18 +249,18 @@ var QuillComponent = createReactClass({
           onDrop: this.props.ondrop,
           onClick: this.props.onClick,
 				}),
-        React.DOM.div({
+        ReactDOM.div({
           key: 'link-container ' + Math.random(),
 					ref: 'linkContainer',
 					className: 'aui-core-form-editor-link-container',
-				}, React.DOM.div({
+				}, ReactDOM.div({
 					     className: 'aui-core-form-editor-link-text-wrapper',
-          }, React.DOM.span({
+          }, ReactDOM.span({
   					    className: 'aui-core-form-editor-link-text',
                 children: 'Enlace permanente '+ this.props.feature,
             })
           ),
-          React.DOM.div({
+          ReactDOM.div({
               key: 'text-link ' + Math.random(),
               ref: 'textLink',
 					    className: 'aui-core-form-editor-link-draggrable',
@@ -267,7 +268,7 @@ var QuillComponent = createReactClass({
               onDrag: this.props.ondrag,
               onDragStart: this.props.ondragStar,
               onDragEnd: this.props.ondragEndLink,
-          }, React.DOM.span({
+          }, ReactDOM.span({
 					    className: 'aui-core-form-editor-link-text-draggrable',
               children: this.props.link,
             })
@@ -283,7 +284,7 @@ var QuillComponent = createReactClass({
 	},
 
 	render: function() {
-		return React.DOM.div({
+		return ReactDOM.div({
 			id: this.props.id,
 			style: this.props.style,
 			className: 'quill ' + this.props.className,

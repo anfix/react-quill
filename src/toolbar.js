@@ -1,6 +1,7 @@
 'use strict';
 
 var React = require('react'),
+  ReactDOM = require('react-dom'),
 	createReactClass = require('create-react-class'),
 	PropTypes = require('prop-types'),
 	T = PropTypes;
@@ -80,14 +81,14 @@ var QuillToolbar = createReactClass({
 	},
 
 	renderSeparator: function(key) {
-		return React.DOM.span({
+		return ReactDOM.span({
 			key: key,
 			className:'ql-format-separator'
 		});
 	},
 
 	renderGroup: function(item, key) {
-		return React.DOM.span({
+		return ReactDOM.span({
 			key: item.label || key,
 			className:'ql-format-group' },
 			item.items.map(this.renderItem)
@@ -95,7 +96,7 @@ var QuillToolbar = createReactClass({
 	},
 
 	renderChoiceItem: function(item, key) {
-		return React.DOM.option({
+		return ReactDOM.option({
 			key: item.label || item.value || key,
 			value:item.value },
 			item.label
@@ -103,7 +104,7 @@ var QuillToolbar = createReactClass({
 	},
 
 	renderChoices: function(item, key) {
-		return React.DOM.select({
+		return ReactDOM.select({
 			key: item.label || key,
 			title: item.label,
 			className: 'ql-'+item.type },
@@ -112,7 +113,7 @@ var QuillToolbar = createReactClass({
 	},
 
 	renderAction: function(item, key) {
-		return React.DOM.span({
+		return ReactDOM.span({
 			key: item.label || item.value || key,
 			className: 'ql-format-button ql-'+item.type,
 			title: item.label },
@@ -144,7 +145,7 @@ var QuillToolbar = createReactClass({
 	render: function() {
 		var children = this.props.items.map(this.renderItem);
 		var html = children.map(React.renderToStaticMarkup).join('');
-		return React.DOM.div({
+		return ReactDOM.div({
 			className: this.getClassName(),
 			dangerouslySetInnerHTML: { __html:html }
 		});
