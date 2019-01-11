@@ -1,6 +1,7 @@
 'use strict';
 
 var React = require('react'),
+  ReactDOM = require('react-dom'),
   PropTypes = require('prop-types'),
 	createReactClass = require('create-react-class'),
 	QuillToolbar = require('./toolbar'),
