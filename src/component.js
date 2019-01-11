@@ -201,7 +201,7 @@ var QuillComponent = createReactClass({
 			// because it's shared between components.
 			config.modules = JSON.parse(JSON.stringify(config.modules));
 			config.modules.toolbar = {
-				container: this.refs.toolbar
+				container: ReactDOM.findDOMNode(this.refs.toolbar),
 			};
 		}
 		return config;
