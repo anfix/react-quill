@@ -1,7 +1,7 @@
 'use strict';
 
 var React = require('react'),
-  ReactDOM = require('react-dom'),
+  ReactDOM = require('react-dom/server'),
 	createReactClass = require('create-react-class'),
 	PropTypes = require('prop-types'),
 	T = PropTypes;
