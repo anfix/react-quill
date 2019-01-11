@@ -1,6 +1,7 @@
 'use strict';
 
 var React = require('react'),
+  ReactDOM = require('react-dom'),
 	createReactClass = require('create-react-class'),
 	PropTypes = require('prop-types'),
 	T = PropTypes;
@@ -143,7 +144,7 @@ var QuillToolbar = createReactClass({
 
 	render: function() {
 		var children = this.props.items.map(this.renderItem);
-		var html = children.map(React.renderToStaticMarkup).join('');
+		var html = children.map(ReactDOM.renderToStaticMarkup).join('');
 		return React.createElement('div', {
 			className: this.getClassName(),
 			dangerouslySetInnerHTML: { __html:html }
