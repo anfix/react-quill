@@ -37,7 +37,7 @@
   ],
   "dependencies": {
     "create-react-class": "^15.0.0",
-    "quill": "^0.20.0",
+    "quill": "^1.2.6",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
     "prop-types": "^15.0.0"
