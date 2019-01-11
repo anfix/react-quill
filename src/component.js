@@ -1,7 +1,6 @@
 'use strict';
 
 var React = require('react'),
-  ReactDOM = require('react-dom'),
   PropTypes = require('prop-types'),
 	createReactClass = require('create-react-class'),
 	QuillToolbar = require('./toolbar'),
@@ -240,7 +239,7 @@ var QuillComponent = createReactClass({
 				// so we need to re-render them every time.
 
 				// Render the toolbar unless explicitly disabled
-				ReactDOM.div({
+				React.createElement('div', {
 					key: 'editor-' + Math.random(),
 					ref: 'editor',
 					className: 'quill-contents',
@@ -249,18 +248,18 @@ var QuillComponent = createReactClass({
           onDrop: this.props.ondrop,
           onClick: this.props.onClick,
 				}),
-        ReactDOM.div({
+        React.createElement('div', {
           key: 'link-container ' + Math.random(),
 					ref: 'linkContainer',
 					className: 'aui-core-form-editor-link-container',
-				}, ReactDOM.div({
+				}, React.createElement('div', {
 					     className: 'aui-core-form-editor-link-text-wrapper',
-          }, ReactDOM.span({
+          }, React.createElement('span', {
   					    className: 'aui-core-form-editor-link-text',
                 children: 'Enlace permanente '+ this.props.feature,
             })
           ),
-          ReactDOM.div({
+          React.createElement('div', {
               key: 'text-link ' + Math.random(),
               ref: 'textLink',
 					    className: 'aui-core-form-editor-link-draggrable',
@@ -268,7 +267,7 @@ var QuillComponent = createReactClass({
               onDrag: this.props.ondrag,
               onDragStart: this.props.ondragStar,
               onDragEnd: this.props.ondragEndLink,
-          }, ReactDOM.span({
+          }, React.createElement('span', {
 					    className: 'aui-core-form-editor-link-text-draggrable',
               children: this.props.link,
             })
@@ -284,7 +283,7 @@ var QuillComponent = createReactClass({
 	},
 
 	render: function() {
-		return ReactDOM.div({
+		return React.createElement('div', {
 			id: this.props.id,
 			style: this.props.style,
 			className: 'quill ' + this.props.className,
